@@ -1,4 +1,197 @@
-// ...existing code...
+/* Градиентный фон для всего сайта */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #181c2b 0%, #232946 100%);
+    color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Фиксированная навигация */
+nav {
+    background: rgba(24, 28, 43, 0.85);
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.15);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.nav-link:hover {
+    background: linear-gradient(90deg, #396bf5 0%, #00B0FF 100%);
+    color: #fff;
+}
+
+/* Неоновый заголовок */
+.hero-content h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, #ff3cac 0%, #784ba0 50%, #396bf5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 16px #396bf5, 0 0 32px #ff3cac;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    animation: neon-flicker 2.5s infinite alternate;
+}
+@keyframes neon-flicker {
+    0% { text-shadow: 0 0 16px #396bf5, 0 0 32px #ff3cac; }
+    100% { text-shadow: 0 0 32px #396bf5, 0 0 64px #ff3cac; }
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 8px #23294644;
+}
+
+/* Кнопки */
+.btn, .contact-btn {
+    display: inline-block;
+    padding: 1rem 2.2rem;
+    border-radius: 999px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff3cac 0%, #396bf5 100%);
+    color: #fff;
+    box-shadow: 0 4px 24px 0 #396bf555;
+    border: none;
+    outline: none;
+    margin: 0.5rem 0;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.3s;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+.btn:hover, .contact-btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 32px 0 #ff3cac88;
+    background: linear-gradient(90deg, #396bf5 0%, #ff3cac 100%);
+}
+
+.hero-buttons, .contact-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+}
+@media (min-width: 768px) {
+    .hero-buttons, .contact-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+/* Современные карточки участников */
+.member-card {
+    background: linear-gradient(135deg, #232946 60%, #396bf5 100%);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 #396bf555, 0 1.5px 8px 0 #00000033;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1.5px solid #232946;
+}
+.member-card:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-1deg);
+    box-shadow: 0 16px 48px 0 #ff3cac55, 0 2px 12px 0 #00000044;
+    border-color: #ff3cac;
+}
+.member-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-bottom: 2px solid #396bf5;
+}
+.member-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0.5rem 0 0.2rem 0;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.member-card p {
+    color: #e0e0e0;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(90deg, #ff3cac 0%, #396bf5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 16px #396bf5, 0 0 32px #ff3cac;
+}
+
+/* Футер */
+footer {
+    background: rgba(24, 28, 43, 0.95);
+    color: #b0b0b0;
+    padding: 2.5rem 0 1.5rem 0;
+    text-align: center;
+    border-top: 1.5px solid #232946;
+    margin-top: 3rem;
+}
+footer .text-3xl {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #ff3cac 0%, #396bf5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+footer p, footer n, footer п {
+    color: #b0b0b0;
+    font-size: 1rem;
+    margin: 0.2rem 0;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .members-grid {
+        gap: 1rem;
+    }
+    .member-card img {
+        height: 180px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #232946;
+}
+::-webkit-scrollbar-thumb {
+    background: #396bf5;
+    border-radius: 8px;
+}
 
 /* Стили для секции с участниками */
 .members {
@@ -28,4 +221,3 @@
     font-size: 1.2em;
     margin: 0;
 }
-// ...existing code...
